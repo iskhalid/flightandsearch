@@ -20,6 +20,7 @@ class CityRepository {
                     id:cityId
                 }
             });
+            return true;
         } catch (error) {
             console.log("Wrong in deleteCity repository layer");
             throw {error};
@@ -33,6 +34,7 @@ class CityRepository {
                     id:cityId
                 }
             })
+            return city;
         } catch (error) {
             console.log("Wrong in getcity repository layer");
             throw {error};
@@ -42,6 +44,7 @@ class CityRepository {
     async getCity(cityId){
         try {
             const city = City.findByPk(cityId);
+            return city;
         } catch (error) {
             console.log("Wrong in getcity repository layer");
             throw {error};

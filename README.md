@@ -46,3 +46,9 @@ npx sequelize model:generate --name Airport --attributes name:String,address:Str
 
 ```
 
+### creating seed
+```
+npx sequelize seed:generate --name someName
+```
+
+

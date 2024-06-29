@@ -12,32 +12,32 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-   await queryInterface.bulkInsert('Airports', [
-    {
-      name: 'Chitwan airport',
-      cityId: 8,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
-      name: 'A airport',
-      cityId: 8,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
-      name: 'B airport',
-      cityId: 8,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
-      name: 'Pokhara airport',
-      cityId: 1,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }
-  ], {});
+  //  await queryInterface.bulkInsert('Airports', [
+  //   {
+  //     name: 'Chitwan airport',
+  //     cityId: 8,
+  //     createdAt: new Date(),
+  //     updatedAt: new Date()
+  //   },
+  //   {
+  //     name: 'A airport',
+  //     cityId: 8,
+  //     createdAt: new Date(),
+  //     updatedAt: new Date()
+  //   },
+  //   {
+  //     name: 'B airport',
+  //     cityId: 8,
+  //     createdAt: new Date(),
+  //     updatedAt: new Date()
+  //   },
+  //   {
+  //     name: 'Pokhara airport',
+  //     cityId: 1,
+  //     createdAt: new Date(),
+  //     updatedAt: new Date()
+  //   }
+  // ], {});
   },
 
   async down (queryInterface, Sequelize) {

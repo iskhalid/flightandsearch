@@ -51,5 +51,14 @@ npx sequelize model:generate --name Airport --attributes name:String,address:Str
 npx sequelize seed:generate --name someName
 ```
 
+### seeding
+```
+npx sequelize db:seed:all
+
+```
+
+
 todo
 -create filter and crud flight get all
+-min price and max price use [op.and or op.between]
+

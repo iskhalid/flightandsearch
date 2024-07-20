@@ -1,3 +1,4 @@
+const { Op, and } = require('sequelize');
 const {Flights} = require('../models/index');
 
 
@@ -5,10 +6,23 @@ class FlightRepository {
 
     #createFilter (data) {
         const filter = {};
+        // for shorthand
+        //  filter = {...data}
         if(data.arrivalAirportId) filter.arrivalAirportId = data.arrivalAirportId;
         if(data.departureAirportId) filter.departureAirportId = data.departureAirportId;
-        if(data.minPrice) Object.assign(filter,{price: {[Op.gte]:data.minPrice}});
-        if(data.maxPrice) Object.assign(filter,{price: {[Op.lte]:data.maxPrice}});
+    //    this approach implement extra query
+        // if(data.minPrice && data.maxPrice) {
+        //     Object.assign(filter,{[Op.and]: [{price: { [Op.gte]: data.minPrice}}, {price: { [Op.lte]: data.maxPrice }}]} )
+        // }
+        const priceFilter = [];
+         if(data.minPrice){
+            priceFilter.push({price: {[Op.gte]: data.minPrice}})
+         }
+        if(data.maxPrice) {
+            priceFilter.push({price: {[Op.lte]: data.maxPrice}})
+        }
+        Object.assign(filter,{[Op.and]: priceFilter} )
+        
         return filter;
 
     }
